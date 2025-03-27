@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('https://source.unsplash.com/1600x900/?night,stars') no-repeat center center/cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        .star {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 15px 5px white;
+        }
+        .message, .cake, .love-letter {
+            display: none;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background: gold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="star"></div>
+    <div class="message">
+        <h1>Happy Birthday My Love! 🎉</h1>
+        <p>Wishing you the happiest and most beautiful day ever! 💖</p>
+        <button onclick="showCake()">Cut the Cake 🎂</button>
+    </div>
+    <div class="cake">
+        <h2>🎂 *Cake Cutting Sound* 🎂</h2>
+        <button onclick="showLoveLetter()">Reveal Love Letter 💌</button>
+    </div>
+    <div class="love-letter">
+        <h2>My Love Letter to You 💖</h2>
+        <p>My dearest, you are the polestar in my life, guiding me through every dark night. I love you more than words can say...</p>
+    </div>
+    <script>
+        window.onload = function() {
+            setTimeout(() => {
+                document.querySelector('.message').style.display = 'block';
+            }, 1000);
+        }
+        function showCake() {
+            document.querySelector('.message').style.display = 'none';
+            document.querySelector('.cake').style.display = 'block';
+        }
+        function showLoveLetter() {
+            document.querySelector('.cake').style.display = 'none';
+            document.querySelector('.love-letter').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
