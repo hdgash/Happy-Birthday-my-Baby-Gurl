@@ -1,0 +1,99 @@
+# Creating an improved HTML file for the birthday wish page
+html_content = """<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday My Love</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: black;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            color: white;
+            font-family: Arial, sans-serif;
+            position: relative;
+            overflow: hidden;
+        }
+        .star {
+            position: absolute;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 20px 10px white;
+        }
+        .container {
+            display: none;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 400px;
+        }
+        button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background: gold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: orange;
+        }
+    </style>
+</head>
+<body>
+    <div class="star"></div>
+    <div id="message" class="container">
+        <h1>Happy Birthday My Love! 🎉</h1>
+        <p>Wishing you the happiest and most beautiful day ever! 💖</p>
+        <button onclick="showCake()">Cut the Cake 🎂</button>
+    </div>
+    <div id="cake" class="container">
+        <h2>🎂 *Cake Cutting Sound* 🎂</h2>
+        <p>The cake has been cut! Now, a special message for you...</p>
+        <button onclick="showLoveLetter()">Reveal Love Letter 💌</button>
+    </div>
+    <div id="love-letter" class="container">
+        <h2>My Love Letter to You 💖</h2>
+        <p>My dearest, you are the polestar in my life, guiding me through every dark night. I love you more than words can say...</p>
+    </div>
+    <script>
+        window.onload = function() {
+            setTimeout(() => {
+                document.getElementById('message').style.display = 'block';
+            }, 1000);
+        }
+        function showCake() {
+            document.getElementById('message').style.display = 'none';
+            document.getElementById('cake').style.display = 'block';
+        }
+        function showLoveLetter() {
+            document.getElementById('cake').style.display = 'none';
+            document.getElementById('love-letter').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
+"""
+
+# Save the file
+file_path = "/mnt/data/birthday_wish.html"
+with open(file_path, "w") as file:
+    file.write(html_content)
+
+# Provide the file path for download
+file_path
